@@ -3,107 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historias | Chicas con Propósito</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+    <title>Historias de Fe | Chicas con Propósito</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* PALETA DE COLORES (consistencia) */
+        /* PALETA DE COLORES ("Soft Autumn") - REPLICADA */
         :root {
-            --color-secundario: #ffcccc; /* Rosa Claro */
-            --color-fuerte: #ff99cc; /* Rosa Chicle */
-            --color-navegacion: #99ccff; /* Azul Claro */
-            --fondo-seccion: #ffffcc; /* Amarillo Muy Claro */
-            --texto-oscuro: #333;
+            --color-principal-fondo: #E9D5C8;
+            --color-fuerte-cta: #A55B68;
+            --color-navegacion: #6E8974;
+            --fondo-seccion: #F8F4F2;
+            --texto-oscuro: #4A423D;
+            --texto-claro: #F8F8F8;              
         }
-
-        /* FUENTES */
-        .fuente-titulo {
-            font-family: 'Dancing Script', cursive; 
-        }
-        .fuente-base {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Estilos Globales */
+        .fuente-titulo { font-family: 'Dancing Script', cursive; }
+        .fuente-base { font-family: 'Poppins', sans-serif; }
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: white; 
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-principal-fondo); 
             color: var(--texto-oscuro);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            margin: 0; padding: 0; line-height: 1.7; overflow-x: hidden;
         }
-
-        /* BARRA DE NAVEGACIÓN (Actualizada) */
         nav {
-            background-color: var(--color-navegacion);
-            padding: 10px 0;
-            text-align: center;
+            background-color: var(--color-navegacion); padding: 15px 0; text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); z-index: 10;
         }
-
         nav a {
-            color: var(--texto-oscuro);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
+            color: var(--texto-claro); text-decoration: none; margin: 0 15px; font-weight: 500;
+            transition: color 0.3s; padding: 5px 10px;
         }
-
         nav a:hover {
-            color: var(--color-fuerte);
+            color: var(--color-fuerte-cta); border-bottom: 3px solid var(--color-fuerte-cta); 
+        }
+        .page-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 20px;
+        }
+        .section-title {
+            font-size: 3em; color: var(--color-fuerte-cta); font-weight: 800;
+            text-align: center; margin-bottom: 50px; padding-top: 60px;
+        }
+        footer {
+            background-color: var(--color-navegacion); color: var(--texto-claro);
+            text-align: center; padding: 30px 0; margin-top: 50px; font-size: 0.95em;
         }
 
-        /* Encabezado Principal */
-        header {
-            background-color: var(--color-navegacion); 
-            color: var(--texto-oscuro);
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Estilos específicos de la página */
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        /* Contenedor de Contenido */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
+        .story-card {
             background-color: var(--fondo-seccion);
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Estilo para cada Testimonio */
-        .testimonio-card {
-            background-color: var(--color-secundario); /* Rosa Claro */
-            padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            border-left: 5px solid var(--color-fuerte); /* Barra Rosa Chicle */
+        .story-card h3 {
+            color: var(--color-fuerte-cta);
+            font-size: 1.5em;
+            margin-top: 0;
+            border-bottom: 2px solid var(--color-navegacion);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .story-card p {
             font-style: italic;
         }
-
-        .testimonio-card strong {
-            display: block;
-            margin-top: 10px;
-            font-style: normal;
-            text-align: right;
-            color: #555;
-        }
-
-        /* Pie de página */
-        footer {
-            background-color: var(--color-navegacion); 
-            color: var(--texto-oscuro);
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 40px;
-            font-size: 0.9em;
+        .story-card a {
+            display: inline-block;
+            color: var(--color-navegacion);
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -118,15 +90,41 @@
         <a href="mision.html">MISIÓN</a>
     </nav>
     
-    <header>
-        <h1 class="fuente-titulo">💖 Testimonios que Inspiran</h1>
-        <p>Compartimos cómo la fe transforma la vida.</p>
-    </header>
+    <div class="page-container fuente-base">
+        <h2 class="section-title">🫂 Historias que Inspiran</h2>
 
-    <div class="container fuente-base">
-        
-        <h2>Historias de Propósito Encontrado</h2>
-        <p>Lee las experiencias de otras chicas de la comunidad que han caminado con Dios y han descubierto su verdadero valor e identidad.</p>
-        
-        <div class="testimonio-card">
-            <p>"Pensé que mi vida no tenía dirección, pero a través de los mensajes y el apoyo del grupo, encontré mi llamado en el servicio. Mi propósito es amar
+        <p style="text-align: center; margin-bottom: 40px; font-size: 1.1em;">
+            Lee los testimonios de mujeres reales que han encontrado su propósito y han transformado sus vidas a través de la fe.
+        </p>
+
+        <div class="story-grid">
+            
+            <div class="story-card">
+                <h3>El Viaje de Ana: De la Duda a la Determinación</h3>
+                <p>Ana compartió cómo superó la ansiedad en su carrera profesional al enfocarse en el plan de Dios, demostrando que la fe es la mejor estrategia.</p>
+                <a href="#">Leer Historia Completa</a>
+            </div>
+
+            <div class="story-card">
+                <h3>La Familia de Laura: Paz en Medio de la Tormenta</h3>
+                <p>Laura nos relata cómo las herramientas de oración y devoción transformaron su hogar, encontrando la paz incluso en los momentos difíciles.</p>
+                <a href="#">Leer Historia Completa</a>
+            </div>
+
+            <div class="story-card">
+                <h3>Catalina: Un Llamado al Servicio Comunitario</h3>
+                <p>Descubre cómo Catalina descubrió su misión al servir a los demás, demostrando que el propósito se encuentra en la acción desinteresada.</p>
+                <a href="#">Leer Historia Completa</a>
+            </div>
+            
+        </div>
+    </div>
+    
+    <footer>
+        <div class="page-container">
+            <p>&copy; 2025 Chicas con Propósito. Creado con Fe y Color.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

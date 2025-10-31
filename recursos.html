@@ -3,139 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libros y Descargas Gratuitas | Chicas con Propósito</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+    <title>Recursos de Desarrollo | Chicas con Propósito</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* PALETA DE COLORES (consistencia) */
+        /* PALETA DE COLORES ("Soft Autumn") - REPLICADA */
         :root {
-            --color-secundario: #ffcccc; 
-            --color-fuerte: #ff99cc; 
-            --color-navegacion: #99ccff; 
-            --fondo-seccion: #ffffcc;
-            --texto-oscuro: #333;
+            --color-principal-fondo: #E9D5C8;
+            --color-fuerte-cta: #A55B68;
+            --color-navegacion: #6E8974;
+            --fondo-seccion: #F8F4F2;
+            --texto-oscuro: #4A423D;
+            --texto-claro: #F8F8F8;              
         }
-
-        /* FUENTES */
-        .fuente-titulo {
-            font-family: 'Dancing Script', cursive; 
-        }
-        .fuente-base {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Estilos Globales */
+        .fuente-titulo { font-family: 'Dancing Script', cursive; }
+        .fuente-base { font-family: 'Poppins', sans-serif; }
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: white; 
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-principal-fondo); 
             color: var(--texto-oscuro);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            margin: 0; padding: 0; line-height: 1.7; overflow-x: hidden;
         }
-
-        /* BARRA DE NAVEGACIÓN */
         nav {
-            background-color: var(--color-navegacion);
-            padding: 10px 0;
-            text-align: center;
+            background-color: var(--color-navegacion); padding: 15px 0; text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); z-index: 10;
         }
-
         nav a {
-            color: var(--texto-oscuro);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
+            color: var(--texto-claro); text-decoration: none; margin: 0 15px; font-weight: 500;
+            transition: color 0.3s; padding: 5px 10px;
         }
-
         nav a:hover {
-            color: var(--color-fuerte);
+            color: var(--color-fuerte-cta); border-bottom: 3px solid var(--color-fuerte-cta); 
+        }
+        .page-container {
+            max-width: 1000px; margin: 0 auto; padding: 0 20px;
+        }
+        .section-title {
+            font-size: 3em; color: var(--color-fuerte-cta); font-weight: 800;
+            text-align: center; margin-bottom: 50px; padding-top: 60px;
+        }
+        footer {
+            background-color: var(--color-navegacion); color: var(--texto-claro);
+            text-align: center; padding: 30px 0; margin-top: 50px; font-size: 0.95em;
         }
 
-        /* Encabezado Principal */
-        header {
-            background-color: var(--color-navegacion); 
-            color: var(--texto-oscuro);
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Estilos específicos de la página */
+        .resource-list {
+            list-style: none;
+            padding: 0;
         }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        /* Contenedor de Contenido */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: var(--fondo-seccion);
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Estilos para las Categorías */
-        .categoria-header {
-            background-color: var(--color-secundario); /* Rosa Claro */
-            color: var(--texto-oscuro);
-            padding: 10px 20px;
-            margin-top: 30px;
-            border-radius: 5px;
-            border-left: 6px solid var(--color-fuerte); /* Rosa Chicle */
-            font-size: 1.5em;
-        }
-        
-        /* Tarjeta de Libro */
-        .libro-card {
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            margin-bottom: 10px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); 
+        .resource-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: var(--fondo-seccion);
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
         }
-
-        .libro-card h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.1em;
-            color: var(--color-fuerte); /* Título en Rosa Chicle */
+        .resource-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
-
-        .libro-card p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-
-        .download-button {
-            background-color: var(--color-fuerte);
-            color: white;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            white-space: nowrap;
-        }
-
-        .download-button:hover {
-            background-color: #e02581;
-        }
-
-        /* Pie de página */
-        footer {
-            background-color: var(--color-navegacion); 
+        .resource-item h3 {
             color: var(--texto-oscuro);
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 40px;
-            font-size: 0.9em;
+            font-size: 1.4em;
+            margin: 0;
+        }
+        .download-button {
+            background-color: var(--color-navegacion);
+            color: var(--texto-claro);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .download-button:hover {
+            background-color: #55715C;
         }
     </style>
 </head>
@@ -150,92 +97,46 @@
         <a href="mision.html">MISIÓN</a>
     </nav>
     
-    <header>
-        <h1 class="fuente-titulo">📚 Biblioteca de Descarga Gratuita</h1>
-        <p>Lecturas inspiradoras para tu camino de fe y propósito.</p>
-    </header>
+    <div class="page-container fuente-base">
+        <h2 class="section-title">✨ Recursos de Crecimiento</h2>
 
-    <div class="container fuente-base">
-        
-        <p>Hemos seleccionado una colección de libros (E-books y PDF) fundamentales para el desarrollo integral de la mujer con propósito. ¡Descarga tu favorito!</p>
-        
-        <h2 class="categoria-header">🕊️ Fe y Devocional</h2>
-        
-        <div class="libro-card">
-            <div>
-                <h3>El Poder de la Oración (E-book)</h3>
-                <p>Guía práctica para fortalecer tu vida de oración diaria.</p>
-            </div>
-            <a href="#" class="download-button">Descargar PDF</a>
-        </div>
+        <p style="text-align: center; margin-bottom: 40px; font-size: 1.1em;">
+            Descarga nuestras guías y herramientas gratuitas para impulsar tu desarrollo personal y tu vida espiritual.
+        </p>
 
-        <div class="libro-card">
-            <div>
-                <h3>Devocional 30 Días: El Corazón de Jesús</h3>
-                <p>Meditaciones diarias sobre los Evangelios.</p>
-            </div>
-            <a href="#" class="download-button">Descargar PDF</a>
-        </div>
+        <ul class="resource-list">
+            
+            <li class="resource-item">
+                <div>
+                    <h3>Guía de Planeación de Metas (PDF)</h3>
+                    <p>Enfoca tu año en propósito y fe.</p>
+                </div>
+                <a href="ruta/a/guia_metas.pdf" class="download-button" download>Descargar</a>
+            </li>
 
-        <h2 class="categoria-header">👑 Identidad y Autoestima</h2>
-        
-        <div class="libro-card">
-            <div>
-                <h3>Quién Eres en Cristo</h3>
-                <p>Descubre tu valor y posición inmutable según la Biblia.</p>
-            </div>
-            <a href="#" class="download-button">Descargar E-book</a>
-        </div>
+            <li class="resource-item">
+                <div>
+                    <h3>Devocional de 7 Días para la Ansiedad (eBook)</h3>
+                    <p>Encuentra paz en la Palabra de Dios.</p>
+                </div>
+                <a href="ruta/a/devocional_ansiedad.pdf" class="download-button" download>Descargar</a>
+            </li>
 
-        <div class="libro-card">
-            <div>
-                <h3>Libérate de la Perfección</h3>
-                <p>Aprende a aceptar tu proceso y vivir en Gracia.</p>
-            </div>
-            <a href="#" class="download-button">Descargar E-book</a>
-        </div>
-
-        <h2 class="categoria-header">🫂 Amistad y Relaciones</h2>
-        
-        <div class="libro-card">
-            <div>
-                <h3>Cómo Edificar Amistades Sólidas</h3>
-                <p>Consejos bíblicos para cultivar relaciones que honren a Dios.</p>
-            </div>
-            <a href="#" class="download-button">Descargar PDF</a>
-        </div>
-
-        <div class="libro-card">
-            <div>
-                <h3>Límites Sanos en el Noviazgo</h3>
-                <p>Guía para mantener la pureza y el respeto mutuo.</p>
-            </div>
-            <a href="#" class="download-button">Descargar Guía</a>
-        </div>
-        
-        <h2 class="categoria-header">💼 Liderazgo y Emprendimiento</h2>
-
-        <div class="libro-card">
-            <div>
-                <h3>Mujer con Influencia</h3>
-                <p>Principios bíblicos para ser una líder de impacto en tu entorno.</p>
-            </div>
-            <a href="#" class="download-button">Descargar PDF</a>
-        </div>
-
-        <div class="libro-card">
-            <div>
-                <h3>Propósito + Negocio (Guía Inicial)</h3>
-                <p>Cómo alinear tu llamado con tus proyectos profesionales.</p>
-            </div>
-            <a href="#" class="download-button">Descargar Guía</a>
-        </div>
-
-
+            <li class="resource-item">
+                <div>
+                    <h3>Checklist de Hábitos Diarios Cristianos</h3>
+                    <p>Construye una rutina que honre a Dios.</p>
+                </div>
+                <a href="ruta/a/checklist_habitos.pdf" class="download-button" download>Descargar</a>
+            </li>
+            
+        </ul>
     </div>
-
+    
     <footer>
-        <p>&copy; 2025 Chicas con Propósito. Creado con Fe y Color.</p>
+        <div class="page-container">
+            <p>&copy; 2025 Chicas con Propósito. Creado con Fe y Color.</p>
+        </div>
     </footer>
 
 </body>

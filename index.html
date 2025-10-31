@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chicas con Propósito | Fe, Inspiración y Desarrollo</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* PALETA DE COLORES */
+        /* PALETA DE COLORES ("Soft Autumn" - Final) */
         :root {
-            --color-secundario: #ffcccc; /* Rosa Claro para citas/secciones */
-            --color-fuerte: #ff99cc; /* Rosa Chicle para botones */
-            --color-navegacion: #99ccff; /* Azul Claro para encabezados/nav */
-            --fondo-seccion: #ffffcc; /* Amarillo Muy Claro para contenedor */
-            --texto-oscuro: #333;
+            --color-principal-fondo: #E9D5C8;    /* Beige Rosado Suave - Fondo general */
+            --color-fuerte-cta: #A55B68;         /* Rosa Terracota Apagado - CTA/Titulares principales */
+            --color-navegacion: #6E8974;         /* Verde Oliva Apagado - Fondo de Navegación/Pie de página */
+            --fondo-seccion: #F8F4F2;            /* Blanco Roto/Marfil - Fondo de secciones clave */
+            --color-acento-secundario: #C5A574; /* Dorado/Mostaza Suave - Acentos, bordes */
+            --texto-oscuro: #4A423D;             /* Marrón Grisáceo Oscuro */
+            --color-blanco: #ffffff;
+            --texto-claro: #F8F8F8;              
         }
 
         /* FUENTES */
@@ -22,100 +25,267 @@
             font-family: 'Dancing Script', cursive; 
         }
         .fuente-base {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif; 
         }
 
         /* Estilos Globales */
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: white; /* FONDO PRINCIPAL BLANCO */
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-principal-fondo); 
             color: var(--texto-oscuro);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.7; 
+            overflow-x: hidden;
         }
         
         /* BARRA DE NAVEGACIÓN */
         nav {
-            background-color: var(--color-navegacion); /* Azul Claro */
-            padding: 10px 0;
+            background-color: var(--color-navegacion); 
+            padding: 15px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+            z-index: 10;
         }
 
         nav a {
-            color: var(--texto-oscuro);
+            color: var(--texto-claro); 
             text-decoration: none;
             margin: 0 15px;
-            font-weight: bold;
+            font-weight: 500;
             transition: color 0.3s;
+            padding: 5px 10px;
         }
 
         nav a:hover {
-            color: var(--color-fuerte);
+            color: var(--color-fuerte-cta); 
+            border-bottom: 3px solid var(--color-fuerte-cta); 
         }
 
-        /* Encabezado Principal */
-        header {
-            background-color: var(--color-navegacion); /* Azul Claro */
-            color: var(--texto-oscuro);
-            padding: 20px 0;
+        /* Contenedor Principal */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Estilo para Títulos H2 de Sección */
+        .section-title {
+            font-size: 3em; 
+            color: var(--color-fuerte-cta); 
+            font-weight: 800;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            padding-top: 20px;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        /* Contenedor de Contenido */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: var(--fondo-seccion); /* Amarillo Muy Claro */
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); 
-        }
-        
-        /* Citas Destacadas */
-        .cita-destacada {
-            background-color: var(--color-secundario); /* Rosa Claro */
-            color: var(--texto-oscuro);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            font-style: italic;
-            margin-bottom: 30px;
-            border-left: 5px solid var(--color-fuerte);
-        }
-
-        /* Botón (Enlace a WhatsApp) */
+        /* BOTÓN CTA (Llamada a la Acción) */
         .boton {
             display: inline-block;
-            background-color: var(--color-fuerte); /* Rosa Chicle */
-            color: white;
-            padding: 12px 25px;
+            background-color: var(--color-fuerte-cta); 
+            color: var(--texto-claro);
+            padding: 18px 40px; 
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            border-radius: 5px; 
+            font-weight: 700;
+            font-size: 1.15em;
+            transition: background-color 0.3s, box-shadow 0.3s;
             border: none;
             cursor: pointer;
+            box-shadow: 0 8px 15px rgba(165, 91, 104, 0.5); 
         }
 
         .boton:hover {
-            background-color: #e02581;
+            background-color: #8C4D58; 
+            box-shadow: 0 10px 20px rgba(165, 91, 104, 0.7); 
         }
         
+        /* ================================== */
+        /* 1. SECCIÓN HERO (Encabezado principal) - IMAGEN AL LADO */
+        /* ================================== */
+        .hero-section {
+            background-color: var(--color-principal-fondo); /* Fondo general suave */
+            padding: 100px 0; 
+            min-height: 500px;
+            margin-bottom: 60px;
+            color: var(--texto-oscuro);
+            position: relative; /* Para el posicionamiento de elementos */
+            display: flex; /* Para centrar el page-container verticalmente si el contenido es corto */
+            align-items: center; /* Centrado vertical */
+        }
+
+        .hero-content-wrapper {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 40px; /* Espacio entre el texto y la imagen */
+        }
+
+        .hero-content {
+            flex: 1;
+            padding: 50px; /* Más padding para el efecto de tarjeta */
+            max-width: 50%;
+            background-color: var(--fondo-seccion); /* Blanco roto para el fondo del contenido */
+            border-radius: 15px; /* Bordes redondeados como en tu imagen */
+            /* Sombra para el efecto de "tarjeta" elevado */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+        }
+
+        .hero-content h1 {
+            font-size: 5em; 
+            margin: 0 0 20px 0;
+            line-height: 1.1;
+            color: var(--color-fuerte-cta); 
+        }
+
+        .hero-content p {
+            font-size: 1.4em; 
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-image-container { /* Nuevo contenedor para la imagen */
+            flex: 1;
+            max-width: 50%; /* Limitar el ancho para que esté al lado */
+            min-height: 450px; /* Asegurar un tamaño mínimo */
+            background-color: var(--color-acento-secundario); /* Fondo si la imagen no carga */
+            border-radius: 15px; /* Bordes redondeados */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Sombra marcada */
+            overflow: hidden; /* Para que la imagen se ajuste al borde redondeado */
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+            display: block; /* Elimina espacio extra debajo de la imagen */
+        }
+
+        /* ================================== */
+        /* 2. SECCIÓN MANIFIESTO (About/Value Prop) */
+        /* ================================== */
+        .manifiesto-section {
+            background-color: var(--color-principal-fondo); 
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .manifiesto-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--fondo-seccion); 
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
+        }
+
+        /* Citas Destacadas (Cita Bíblica) */
+        .cita-destacada {
+            background-color: var(--color-principal-fondo); 
+            color: var(--texto-oscuro);
+            padding: 30px;
+            border-radius: 5px;
+            font-style: italic;
+            margin: 40px 0;
+            border-left: 5px solid var(--color-fuerte-cta); 
+            font-size: 1.3em;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* ================================== */
+        /* 3. SECCIÓN SERVICIOS (Temas y Navegación) */
+        /* ================================== */
+        .services-section {
+            padding: 80px 0;
+            background-color: var(--color-principal-fondo); 
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        /* Tarjeta - Mayor Calidad con Sombra y Borde */
+        .feature-card {
+            background-color: var(--fondo-seccion); 
+            border-radius: 5px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card h3 {
+            color: var(--color-fuerte-cta); 
+            font-size: 1.8em;
+            margin-top: 15px;
+            padding-bottom: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--color-navegacion); 
+        }
+        
+        .feature-card .cta-link {
+            display: inline-block;
+            color: var(--color-fuerte-cta); 
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 25px;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        .feature-card .cta-link:hover {
+            border-bottom: 2px solid var(--color-fuerte-cta);
+        }
+
         /* Pie de página */
         footer {
-            background-color: var(--color-navegacion); /* Azul Claro */
-            color: var(--texto-oscuro);
+            background-color: var(--color-navegacion); 
+            color: var(--texto-claro);
             text-align: center;
-            padding: 15px 0;
-            margin-top: 40px;
-            font-size: 0.9em;
+            padding: 30px 0;
+            margin-top: 0; 
+            font-size: 0.95em;
+        }
+
+        /* Media Queries para diseño responsive (móviles) */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 0;
+            }
+
+            .hero-content-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                padding: 30px;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5em;
+            }
+
+            .hero-image-container {
+                max-width: 100%;
+                min-height: 300px;
+            }
+
+            .section-title {
+                font-size: 2.2em;
+            }
         }
     </style>
 </head>
@@ -130,45 +300,84 @@
         <a href="mision.html">MISIÓN</a>
     </nav>
     
-    <header>
-        <h1 class="fuente-titulo">✨ Chicas con Propósito ✨</h1>
-        <p>Inspiración Diaria y Vida en la Fe</p>
-    </header>
+    <div class="hero-section">
+        <div class="page-container">
+            <div class="hero-content-wrapper">
+                
+                <div class="hero-content fuente-base">
+                    <h1 class="fuente-titulo">✨ Chicas con Propósito ✨</h1>
+                    <p>Inspiración Diaria y Vida en la Fe. Descubre tu llamado y vívelo al máximo con nuestra comunidad.</p>
+                    
+                    <a href="https://whatsapp.com/channel/0029VbBpH7a8PgsENfeX2w01" target="_blank" class="boton">
+                        ¡Únete a la Comunidad!
+                    </a>
+                </div>
 
-    <div class="container fuente-base">
-        
-        <h2>📖 Nuestro Manifiesto</h2>
-        <p>Somos una comunidad de jóvenes y mujeres que buscan vivir una vida plena, enfocada en los valores cristianos. Creemos que cada una tiene un <strong>propósito único y divino</strong> y estamos aquí para descubrirlo y cultivarlo juntas.</p>
-        
-        <blockquote class="cita-destacada">
-            "Todo lo puedo en Cristo que me fortalece." — Filipenses 4:13
-        </blockquote>
-
-        <h2>💖 Temas que Exploramos</h2>
-        <p>En este espacio, encontrarás recursos y reflexiones sobre:</p>
-        <ul>
-            <li><strong>Desarrollo Personal:</strong> Herramientas para crecer como profesional y líder.</li>
-            <li><strong>Relaciones:</strong> Cómo edificar amistades y relaciones sanas basadas en la fe.</li>
-            <li><strong>Oración y Devocional:</strong> Guías para fortalecer tu tiempo a solas con Dios.</li>
-            <li><strong>Servicio:</strong> Ideas para impactar tu comunidad con amor y acción.</li>
-        </ul>
-
-        <div style="text-align: center; margin-top: 30px;">
-            <p>¡Únete a nuestra comunidad y comienza a vivir tu propósito hoy!</p>
-            
-            <a href="https://whatsapp.com/channel/0029VbBpH7a8PgsENfeX2w01" target="_blank" class="boton">
-                ¡Quiero Unirme! (Canal WA)
-            </a>
-            
-            <p style="margin-top: 15px; font-size: 0.9em; color: #555;">
-                *Serás dirigida a nuestro Canal de WhatsApp.
-            </p>
+                <div class="hero-image-container">
+                    <img src="Captura de pantalla 2025-10-31 a las 13.51.23.jpg" alt="Mujer leyendo la Biblia">
+                </div>
+            </div>
         </div>
-
+    </div>
+    
+    <div class="manifiesto-section fuente-base">
+        <div class="page-container">
+            <div class="manifiesto-box">
+                <h2 class="section-title">📖 Nuestro Manifiesto</h2>
+                <p>Somos una comunidad de jóvenes y mujeres que buscan vivir una vida plena, enfocada en los valores cristianos. Creemos que cada una tiene un <strong>propósito único y divino</strong> y estamos aquí para descubrirlo y cultivarlo juntas.</p>
+                
+                <blockquote class="cita-destacada">
+                    "Todo lo puedo en Cristo que me fortalece." — Filipenses 4:13
+                </blockquote>
+            </div>
+        </div>
     </div>
 
+    <div class="services-section fuente-base">
+        <div class="page-container">
+            <h2 class="section-title">💖 Temas que Exploramos y Recursos Clave</h2>
+            
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 50px; font-size: 1.1em;">En este espacio, encontrarás apoyo, herramientas y reflexiones para crecer en cada área de tu vida, con la fe como nuestro pilar.</p>
+            
+            <div class="services-grid">
+                
+                <div class="feature-card">
+                    <span style="font-size: 2.5em; color: var(--color-fuerte-cta);">✨</span>
+                    <h3>Desarrollo Personal</h3>
+                    <p>Herramientas para crecer como profesional y líder, alineando tu vida terrenal con tu llamado celestial.</p>
+                    <a href="recursos.html" class="cta-link">Ver Recursos</a>
+                </div>
+
+                <div class="feature-card">
+                    <span style="font-size: 2.5em; color: var(--color-fuerte-cta);">🫂</span>
+                    <h3>Relaciones Sanas</h3>
+                    <p>Cómo edificar amistades, familia y relaciones sanas basadas en la fe y el respeto mutuo.</p>
+                    <a href="historias.html" class="cta-link">Ver Historias</a>
+                </div>
+
+                <div class="feature-card">
+                    <span style="font-size: 2.5em; color: var(--color-fuerte-cta);">🙏</span>
+                    <h3>Oración y Devocional</h3>
+                    <p>Guías prácticas para fortalecer tu tiempo a solas con Dios y escuchar Su voz con claridad.</p>
+                    <a href="versiculos.html" class="cta-link">Ir a Versículos</a>
+                </div>
+                
+                <div class="feature-card">
+                    <span style="font-size: 2.5em; color: var(--color-fuerte-cta);">🌍</span>
+                    <h3>Servicio y Misión</h3>
+                    <p>Ideas y retos para impactar tu comunidad con amor y acción, viviendo un cristianismo práctico.</p>
+                    <a href="mision.html" class="cta-link">Conocer Misión</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
     <footer>
-        <p>&copy; 2025 Chicas con Propósito. Creado con Fe y Color.</p>
+        <div class="page-container">
+            <p>&copy; 2025 Chicas con Propósito. Creado con Fe y Color.</p>
+        </div>
     </footer>
 
 </body>
