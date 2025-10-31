@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canal de YouTube | Chicas con Propósito</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* PALETA DE COLORES */
+        :root {
+            --color-secundario: #ffcccc; 
+            --color-fuerte: #ff99cc; 
+            --color-navegacion: #99ccff; 
+            --fondo-seccion: #ffffcc;
+            --texto-oscuro: #333;
+        }
+
+        /* FUENTES */
+        .fuente-titulo {
+            font-family: 'Dancing Script', cursive; 
+        }
+        .fuente-base {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Estilos Globales */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: white; 
+            color: var(--texto-oscuro);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* BARRA DE NAVEGACIÓN */
+        nav {
+            background-color: var(--color-navegacion);
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--texto-oscuro);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-fuerte);
+        }
+
+        /* Encabezado Principal */
+        header {
+            background-color: var(--color-navegacion); 
+            color: var(--texto-oscuro);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Contenedor de Contenido */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center; 
+            background-color: var(--fondo-seccion);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Contenedor del Video (para centrar y dar espacio) */
+        .video-wrapper {
+            margin: 30px auto;
+            max-width: 315px; 
+        }
+        
+        /* Botón de YouTube */
+        .yt-button {
+            display: inline-block;
+            background-color: var(--color-fuerte); 
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+        
+        .yt-button:hover {
+            background-color: #e02581; 
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: var(--color-navegacion); 
+            color: var(--texto-oscuro);
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fuente-base">
+        <a href="index.html">INICIO</a>
+        <a href="youtube.html">CANAL DE YOUTUBE</a>
+        <a href="versiculos.html">VERSÍCULOS</a>
+        <a href="historias.html">HISTORIAS</a> 
+        <a href="recursos.html">RECURSOS</a>
+        <a href="mision.html">MISIÓN</a>
+    </nav>
+    
+    <header>
+        <h1 class="fuente-titulo">▶️ Canal de Inspiración</h1>
+        <p>Material audiovisual para alimentar tu espíritu.</p>
+    </header>
+
+    <div class="container fuente-base">
+        
+        <h2>¡Mira nuestro Short más reciente!</h2>
+        <p>En nuestro canal de YouTube, compartimos devocionales, testimonios y enseñanzas prácticas para tu vida diaria y tu relación con Dios.</p>
+        
+        <div class="video-wrapper">
+            <iframe width="315" height="560" 
+                    src="https://www.youtube.com/embed/fgKIBwwUweE?si=inMObueJt3syfpRz" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <a href="https://www.youtube.com/@ChicasconProp%C3%B3sito0813" target="_blank" class="yt-button">
+            IR AL CANAL DE YOUTUBE
+        </a>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Chicas con Propósito. Creado con Fe y Color.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión | Chicas con Propósito</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* PALETA DE COLORES (consistencia) */
+        :root {
+            --color-secundario: #ffcccc; 
+            --color-fuerte: #ff99cc; 
+            --color-navegacion: #99ccff; 
+            --fondo-seccion: #ffffcc;
+            --texto-oscuro: #333;
+        }
+
+        /* FUENTES */
+        .fuente-titulo {
+            font-family: 'Dancing Script', cursive; 
+        }
+        .fuente-base {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Estilos Globales */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: white; 
+            color: var(--texto-oscuro);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* BARRA DE NAVEGACIÓN */
+        nav {
+            background-color: var(--color-navegacion);
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--texto-oscuro);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-fuerte);
+        }
+
+        /* Encabezado Principal */
+        header {
+            background-color: var(--color-navegacion); 
+            color: var(--texto-oscuro);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Contenedor de Contenido */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: var(--fondo-seccion);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Sección de Valores (Grid simple) */
+        .valores {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 30px;
+            flex-wrap: wrap; 
+        }
+
+        .valor-item {
+            flex: 1;
+            min-width: 150px;
+            padding: 15px;
+            margin: 10px;
+            background-color: var(--color-secundario); /* Rosa Claro */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .valor-item h4 {
+            color: var(--color-fuerte); /* Rosa Chicle */
+            margin-top: 0;
+        }
+
+        /* Cita con fuente de título */
+        .cita-mision {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8em;
+            color: var(--color-fuerte);
+            text-align: center;
+            margin: 40px 0;
+            border-bottom: 2px solid var(--color-secundario);
+            padding-bottom: 10px;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: var(--color-navegacion); 
+            color: var(--texto-oscuro);
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fuente-base">
+        <a href="index.html">INICIO</a>
+        <a href="youtube.html">CANAL DE YOUTUBE</a>
+        <a href="versiculos.html">VERSÍCULOS</a>
+        <a href="historias.html">HISTORIAS</a> 
+        <a href="recursos.html">RECURSOS</a>
+        <a href="mision.html">MISIÓN</a>
+    </nav>
+    
+    <header>
+        <h1 class="fuente-titulo">🌟 Nuestra Historia y Visión</h1>
+        <p>Conoce el corazón y los valores de nuestra comunidad.</p>
+    </header>
+
+    <div class="container fuente-base">
+        
+        <h2>El Nacimiento de un Propósito</h2>
+        <p>Chicas con Propósito nació de la necesidad de crear un espacio seguro y edificante para jóvenes y mujeres que buscan crecer en su fe mientras persiguen sus sueños profesionales y personales. Entendemos que la vida moderna es desafiante, y por eso, nuestra misión es ser un faro de esperanza y guía.</p>
+        
+        <p class="cita-mision">
+            "No se trata solo de soñar, se trata de vivir el propósito que Dios ya plantó en ti."
+        </p>
+
+        <h2>Valores Fundamentales</h2>
+
+        <div class="valores">
+            <div class="valor-item">
+                <h4>FE</h4>
+                <p>Jesucristo es el centro de todo lo que hacemos y enseñamos.</p>
+            </div>
+            <div class="valor-item">
+                <h4>IDENTIDAD</h4>
+                <p>Ayudar a cada chica a reconocer su valor inmutable como hija de Dios.</p>
+            </div>
+            <div class="valor-item">
+                <h4>SERVICIO</h4>
+                <p>Inspirar acciones concretas para impactar el entorno y la comunidad.</p>
+            </div>
+            <div class="valor-item">
+                <h4>COMUNIDAD</h4>
+                <p>Fomentar relaciones sanas de apoyo mutuo y crecimiento.</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 40px;">¿Quiénes Somos?</h2>
+        <p>Somos un equipo de voluntarias que creen firmemente en el poder de la mentoría y la palabra de Dios. Te invitamos a ser parte de esta visión y crecer juntas en fe y propósito.</p>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Chicas con Propósito. Creado con Fe y Color.</p>
+    </footer>
+
+</body>
+</html>
